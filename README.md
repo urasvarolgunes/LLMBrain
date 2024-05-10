@@ -5,3 +5,6 @@ Both services are managed in a Kubernetes cluster, scaled and load balanced to e
 
 You can check out the project here:
 http://llmbrain.online
+
+
+![image](https://github.com/urasvarolgunes/LLMBrain/assets/29859427/d282e813-69aa-46bc-b78f-aabd82eb7fe3)
