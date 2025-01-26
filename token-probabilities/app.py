@@ -22,8 +22,15 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST", "OPTIONS"])
 def func():
+	if request.method == "OPTIONS":
+		# Preflight response
+		response = flask.Response()
+		response.headers.add("Access-Control-Allow-Origin", "*")
+		response.headers.add("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+		response.headers.add("Access-Control-Allow-Headers", "Content-Type")
+		return response
 	if request.method == "GET":
 		response = flask.jsonify({"html": "<p>Hiya</p>"})
 		#response.headers.add('Access-Control-Allow-Origin', '*')
